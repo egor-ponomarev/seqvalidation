@@ -1,0 +1,30 @@
+version: "2"
+
+run:
+  timeout: 5m
+  go: "1.22"
+
+linters:
+  default: none
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - errorlint
+    - goconst
+  settings:
+    goconst:
+      min-len: 1
+      min-occurrences: 2
+      ignore-tests: true
+      ignore-calls: false
+      exclude-types: []
+      match-constant: true
+  exclusions:
+    presets: []
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
